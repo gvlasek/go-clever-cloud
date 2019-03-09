@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <script type="text/javascript">
+        fetch('/spa/' + window.location.hash.substring(1))
+            .then(resp => resp.json())
+            .then(data => {
+                let element = document.getElementById('hello-title’);
+                element.innerHTML = data.Name;
+            });
+    </script>
+</head>
+<body>
+<h2 id="hello-title">empty</h2>
+</body>
+</html>
